@@ -93,6 +93,8 @@ class Analysis():
     # retrieve name and counts in separate lists
     repo_name = []
     repo_counts = []
+    print(f'This is r_json')
+    print(r_json)
     for item in r_json['items'][:top_n]:
       repo_name.append(item['name'])
       repo_counts.append(item['stargazers_count'])
