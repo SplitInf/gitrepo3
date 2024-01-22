@@ -20,6 +20,9 @@ class Analysis():
   def __init__(self, config_file):
 
     ##verify parameters##
+    if not isinstance(config_file, str):
+      raise TypeError('Please provide a str argument')
+
     #get directory
     cur_dir=os.getcwd()
     os.chdir(cur_dir)
