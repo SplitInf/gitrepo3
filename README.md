@@ -20,16 +20,23 @@ save_path: "/content"
 
 - how to run gitrepo3 Analysis. Example script
 ```
-# !pip install git+https://github.com/SplitInf/gitrepo3
-# from gitrepo3 import Analysis
+#install
+!pip install git+https://github.com/SplitInf/gitrepo3
+from gitrepo3 import Analysis
 
-# analysis_obj = Analysis.Analysis('config.yml')
-# analysis_obj.load_data()
+#create instance
+analysis_obj = Analysis.Analysis('config.yml')
 
-# analysis_output = analysis_obj.compute_analysis()
-# print(analysis_output)
+#get data from github
+analysis_obj.load_data()
 
-# analysis_figure = analysis_obj.plot_data()
+#perform analysis to find most common characters
+analysis_output = analysis_obj.compute_analysis()
+print(analysis_output)
+
+#save barplot to output
+analysis_figure = analysis_obj.plot_data()
+
 ```
 
 ## output:
