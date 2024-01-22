@@ -100,8 +100,8 @@ class Analysis():
       repo_counts.append(item['stargazers_count'])
    
     #return values
-#    tuple_plt = (repo_name, repo_counts)
-#    self.data = tuple_plt
+    tuple_plt = (repo_name, repo_counts)
+    self.data = tuple_plt
 
   # def compute_analysis(repo_name: list, repo_counts: list, ) -> None:
   def plot_data(self) -> None:
