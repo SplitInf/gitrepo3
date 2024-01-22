@@ -1,0 +1,8 @@
+gh_token: "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"
+top_n: 20
+plt_color: "blue"
+plt_title: "barbplot"
+plt_x_title: "Top Github Repo"
+plt_y_title: "Stargazer Counts"
+fig_size: [10,6]
+save_path: "/content"
