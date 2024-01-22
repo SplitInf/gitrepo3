@@ -2,40 +2,36 @@
 By default this package uses Github API to retireve the top 20 repositories with more than 1,000 followers.
 The top X repositories can be adjusted using yaml file (see below)
 
-## Instructions
-```
-#Install ghapi
-pip install ghapi
-
-```
-
-
 ## Input:
 By default the code prints the top 20 repositories with results more than 1000 followers
-*optional* config.yml file can be provided with key:value pair top_n: interger
+*optional* user_config.yml file can be provided with key:value pair top_n: interger (and other plot settings)
 There is a warning when more than 20 repositories is selected
-- example config.yml:
+- example user_config.yml:
 ```
+gh_token: "github_pat_somethingsomething"
 top_n: 15
+plt_color: "red"
+plt_title: "barbplot"
+plt_x_title: "Top Github Repo"
+plt_y_title: "Stargazer Counts"
+fig_size: [10,6]
+save_path: "/content"
 ```
 
-- how to run ghapi. Example script
+- how to run gitrepo3 Analysis. Example script
 ```
-#after running pip install ghapi
-from ghapi import ghapi_func
+# !pip install git+https://github.com/SplitInf/gitrepo3
+# from gitrepo3 import Analysis
 
-#get top_n entries by configuration file
-file_path="settings.yaml"
-#file_path="" #this gives you default of 15
-n=ghapi_func.Analysis.get_top_n(file_path)
-print(n)
+# analysis_obj = Analysis.Analysis('config.yml')
+# analysis_obj.load_data()
 
-#get list and preview
-t=ghapi_func.Analysis.get_data(n, True)
+# analysis_output = analysis_obj.compute_analysis()
+# print(analysis_output)
 
-#plot results as bar chart
-ghapi_func.Analysis.get_plot(repo_name=t[0], repo_counts=t[1])
+# analysis_figure = analysis_obj.plot_data()
 ```
+
 ## output:
-bar plot of top x repositories
+bar plot of top x repositories in the location determined by 'save_path' in yaml file
 
